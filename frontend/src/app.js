@@ -55,6 +55,7 @@ const App = () => {
         <button
           onClick={e => {
             e.preventDefault();
+            setMessage("");
             setMessages([
               ...messages,
               {
@@ -65,7 +66,7 @@ const App = () => {
             socket.send(message);
           }}
         >
-          Print {message}
+          Print
         </button>
       </form>
       <ul>
