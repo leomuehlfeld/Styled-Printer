@@ -27,10 +27,6 @@ const saveMessage = msg => {
   };
 
   messages.push(message);
-  //
-  // server.clients.forEach(client => {
-  //   client.send(JSON.stringify([message]));
-  // });
   fs.writeJson(STORAGE_PATH, messages);
 };
 

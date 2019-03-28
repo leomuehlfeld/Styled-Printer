@@ -32,7 +32,7 @@ const App = () => {
   const [messages, setMessages] = useState([]);
 
   const socket = useSocket(
-    "ws://localhost:8080",
+    "ws://192.168.2.27:8080",
     () => {
       console.log("Connected");
     },
