@@ -29,10 +29,11 @@ const useSocket = (url, handleConnection, handleMessage) => {
 
 const App = () => {
   const [message, setMessage] = useState("");
+  const [author, setAuthor] = useState("");
   const [messages, setMessages] = useState([]);
 
   const socket = useSocket(
-    "ws://192.168.2.27:8080",
+    "ws://localhost:8080",
     () => {
       console.log("Connected");
     },
@@ -52,17 +53,25 @@ const App = () => {
           value={message}
           type="text"
         />
+        <input
+          onChange={e => setAuthor(e.target.value)}
+          value={author}
+          type="text"
+        />
         <button
           onClick={e => {
             e.preventDefault();
             setMessage("");
+            setAuthor("");
             setMessages([
               ...messages,
               {
                 message,
-                date: new Date()
+                date: new Date(),
+                author
               }
             ]);
+            console.log(messages);
             socket.send(message);
           }}
         >
