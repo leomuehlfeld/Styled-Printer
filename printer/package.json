@@ -1,0 +1,14 @@
+{
+  "name": "printer",
+  "version": "1.0.0",
+  "main": "src/app.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "node src/app.js"
+  },
+  "author": "Leo Mühlfeld",
+  "dependencies": {
+    "socket.io-client": "^2.2.0"
+  }
+}
