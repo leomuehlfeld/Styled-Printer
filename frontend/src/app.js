@@ -29,7 +29,6 @@ const useSocket = (url, handleConnection, handleMessage) => {
 
 const App = () => {
   const [message, setMessage] = useState("");
-  const [author, setAuthor] = useState("");
   const [messages, setMessages] = useState([]);
 
   const socket = useSocket(
@@ -49,26 +48,20 @@ const App = () => {
       <Headline>Printer</Headline>
       <form>
         <input
+          placeholder="Message"
           onChange={e => setMessage(e.target.value)}
           value={message}
-          type="text"
-        />
-        <input
-          onChange={e => setAuthor(e.target.value)}
-          value={author}
           type="text"
         />
         <button
           onClick={e => {
             e.preventDefault();
             setMessage("");
-            setAuthor("");
             setMessages([
               ...messages,
               {
                 message,
-                date: new Date(),
-                author
+                date: new Date()
               }
             ]);
             console.log(messages);
