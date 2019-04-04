@@ -48,6 +48,7 @@ const App = () => {
       <Headline>Printer</Headline>
       <form>
         <input
+          maxLength="50"
           placeholder="Message"
           onChange={e => setMessage(e.target.value)}
           value={message}
