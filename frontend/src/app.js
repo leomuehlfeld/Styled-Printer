@@ -4,35 +4,42 @@ import io from "socket.io-client";
 // Import Typo
 import Headline from "./components/typo/headline";
 
-const socket = io("192.168.0.108:8080");
-
 const App = () => {
   const [value, setValue] = useState("");
   const [user, setUser] = useState("");
   const [messages, setMessages] = useState([]);
+  const [socket, setSocket] = useState(null);
 
   const addMessage = message => {
     setMessages([message, ...messages]);
   };
 
+  useEffect(() => {
+    const s = io("192.168.0.108:8080");
+    setSocket(s);
+  }, []);
+
   useEffect(
     () => {
-      // Listen for new incoming message
-      socket.on("message", message => {
-        addMessage(message);
-      });
+      // Is socket initialized yet?
+      if (socket) {
+        // Listen for new incoming message
+        socket.on("message", message => {
+          addMessage(message);
+        });
 
-      // Listen for all previous messages
-      socket.on("all messages", allMessages => {
-        // Update state to new messages
-        console.log("All", allMessages);
+        // Listen for all previous messages
+        socket.on("all messages", allMessages => {
+          // Update state to new messages
+          console.log("All", allMessages);
 
-        setMessages(
-          [...allMessages].sort((a, b) => new Date(b.date) - new Date(a.date))
-        );
-      });
+          setMessages(
+            [...allMessages].sort((a, b) => new Date(b.date) - new Date(a.date))
+          );
+        });
+      }
     },
-    [messages]
+    [messages, socket]
   );
 
   return (
@@ -81,7 +88,8 @@ const App = () => {
       <ul>
         {messages.map(m => (
           <li>
-            {m.message} {new Date(m.date).toLocaleDateString()}
+            {m.author || "Anonym"} wrote: {m.message}{" "}
+            {new Date(m.date).toLocaleDateString()}
           </li>
         ))}
       </ul>

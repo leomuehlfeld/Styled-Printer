@@ -15,12 +15,14 @@ const saveMessage = async ({ date, message, author }) => {
 
 // Load Messages from DB
 const loadMessages = async () => {
-  const data = await db("messages");
+  const data = await db("messages")
+    .orderBy("date", "desc")
+    .limit(50);
   return data;
 };
 
 // Listen for new connections
-io.on("connect", async socket => {
+io.on("connection", async socket => {
   const previousMessages = await loadMessages();
   socket.emit("all messages", previousMessages);
 
