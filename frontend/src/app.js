@@ -1,48 +1,40 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
+import io from "socket.io-client";
 
 // Import Typo
 import Headline from "./components/typo/headline";
 
-const useSocket = (url, handleConnection, handleMessage) => {
-  const ref = useRef();
+const socket = io("192.168.0.108:8080");
+
+const App = () => {
+  const [value, setValue] = useState("");
+  const [user, setUser] = useState("");
+  const [messages, setMessages] = useState([]);
+
+  const addMessage = message => {
+    setMessages([message, ...messages]);
+  };
 
   useEffect(
     () => {
-      let ws = ref.current;
-      if (!ws) {
-        ws = new WebSocket(url);
-        ref.current = ws;
-      }
+      // Listen for new incoming message
+      socket.on("message", message => {
+        addMessage(message);
+      });
 
-      ws.onopen = handleConnection;
-      ws.onmessage = handleMessage;
+      // Listen for all previous messages
+      socket.on("all messages", allMessages => {
+        // Update state to new messages
+        console.log("All", allMessages);
 
-      return () => {
-        ws.close();
-      };
+        setMessages(
+          [...allMessages].sort((a, b) => new Date(b.date) - new Date(a.date))
+        );
+      });
     },
-    [url]
+    [messages]
   );
 
-  return ref && ref.current;
-};
-
-const App = () => {
-  const [message, setMessage] = useState("");
-  const [messages, setMessages] = useState([]);
-
-  const socket = useSocket(
-    "ws://localhost:8080",
-    () => {
-      console.log("Connected");
-    },
-    messageEvent => {
-      const newMessages = JSON.parse(messageEvent.data);
-      setMessages(newMessages);
-    }
-  );
-
-  console.log("socket", socket);
   return (
     <div className="App">
       <Headline>Printer</Headline>
@@ -50,23 +42,37 @@ const App = () => {
         <input
           maxLength="50"
           placeholder="Message"
-          onChange={e => setMessage(e.target.value)}
-          value={message}
+          onChange={e => setValue(e.target.value)}
+          value={value}
+          type="text"
+        />
+        <input
+          maxLength="50"
+          placeholder="Username"
+          onChange={e => setUser(e.target.value)}
+          value={user}
           type="text"
         />
         <button
           onClick={e => {
+            // Prevent form reload
             e.preventDefault();
-            setMessage("");
-            setMessages([
-              ...messages,
-              {
-                message,
-                date: new Date()
-              }
-            ]);
-            console.log(messages);
-            socket.send(message);
+
+            // Send Message
+            socket.emit("message", {
+              message: value,
+              author: user
+            });
+
+            // Reset message input
+            setValue("");
+
+            // Append message
+            addMessage({
+              message: value,
+              date: new Date(),
+              author: user
+            });
           }}
         >
           Print
