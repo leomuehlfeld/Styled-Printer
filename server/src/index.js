@@ -23,11 +23,13 @@ const loadMessages = async () => {
 
 // Listen for new connections
 io.on("connection", async socket => {
+  console.log("connection added");
   const previousMessages = await loadMessages();
   socket.emit("all messages", previousMessages);
 
   // Listen for incoming messages
   socket.on("message", async messageData => {
+    console.log("recieved new message");
     const message = {
       ...messageData,
       date: new Date()
