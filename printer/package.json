@@ -1,14 +1,17 @@
 {
   "name": "printer",
   "version": "1.0.0",
-  "main": "src/app.js",
+  "main": "print.js",
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "node src/print.js"
+    "start": "node print.js",
+    "getimg": "node getimg.js"
   },
   "author": "Leo Mühlfeld",
   "dependencies": {
+    "moment": "^2.24.0",
+    "puppeteer": "^1.14.0",
     "socket.io-client": "^2.2.0"
   }
 }

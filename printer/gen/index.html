@@ -1,0 +1,74 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Image Generator</title>
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        letter-spacing: 1px;
+        font-family: "Arial";
+      }
+      .background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -3;
+        background: rgba(0, 0, 0, 0.41);
+      }
+      .wrapper {
+        width: 384px;
+        z-index: 10;
+        position: relative;
+        padding: 30px 0;
+      }
+      .modal {
+        padding: 20px 20px;
+        background: white;
+        width: 100%;
+        box-sizing: border-box;
+        border: 10px solid black;
+        position: relative;
+      }
+      .copy {
+        font-size: 35px;
+        font-weight: 700;
+        line-height: 45px;
+      }
+      .marginal {
+        font-size: 20px;
+        font-weight: 500;
+      }
+      .hr {
+        border: none;
+        margin: 30px 0;
+        display: block;
+      }
+    </style>
+    <script>
+      window.onload = function() {
+        const params = new URLSearchParams(window.location.search);
+        value = params.get("text");
+        author = params.get("author");
+        date = params.get("date");
+
+        document.getElementById("output").innerHTML = value;
+        document.getElementById("author").innerHTML = author;
+        document.getElementById("date").innerHTML = date;
+      };
+    </script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="modal">
+        <p class="copy" id="output"></p>
+        <span class="hr"></span>
+        <span class="marginal" id="author">Leo Mühlfeld</span><br />
+        <span class="marginal" id="date">19–04–2019</span>
+      </div>
+    </div>
+  </body>
+</html>

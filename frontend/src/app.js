@@ -47,7 +47,6 @@ const App = () => {
       <Headline>Air Printer</Headline>
       <form>
         <input
-          maxLength="50"
           placeholder="Message"
           onChange={e => setValue(e.target.value)}
           value={value}
@@ -72,7 +71,7 @@ const App = () => {
             });
 
             // Reset message input
-            setValue("");
+            // setValue("");
 
             // Append message
             addMessage({
