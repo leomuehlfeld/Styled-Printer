@@ -2,8 +2,6 @@ const Printer = require("thermalprinter");
 const SerialPort = require("serialport");
 const io = require("socket.io-client");
 const generateImage = require("./getimg");
-const sharp = require("sharp");
-const streamToBuffer = require("stream-to-buffer");
 
 console.log("script now running");
 

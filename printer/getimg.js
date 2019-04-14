@@ -1,6 +1,5 @@
 const puppeteer = require("puppeteer-core");
 const moment = require("moment");
-const fs = require("fs");
 
 async function generateImage(message) {
   const value = message.message;
