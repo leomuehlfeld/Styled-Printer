@@ -4,7 +4,7 @@ const moment = require("moment");
 async function generateImage(message) {
   const value = message.message;
   const author = message.author;
-  const formatted_date = moment(message.date).format("DD–MMM–YYYY");
+  const formatted_date = moment(message.date).format("DD – MM – YYYY");
 
   console.log("image renderer triggered");
   console.log("image renderer recieved following Text: " + value);
