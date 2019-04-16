@@ -12,4 +12,4 @@ Client (ReactApp), Server (NodeJS App) and RaspberryPi (NodeJS App) are talking 
 
 ## Authors
 
-This Project was wirtten by Leo Mühlfeld but could not have been done without the amazing help from Timo Lins!
+This Project was wirtten by [Leo Mühlfeld](https://leomuehlfeld.at) but could not have been done without the amazing help from [Timo Lins](https://timo.sh)!
