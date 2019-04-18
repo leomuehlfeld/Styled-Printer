@@ -8,7 +8,7 @@ The idea was simple: People should be able to send a message to a remote thermal
 
 ## How does it work?
 
-Client (ReactApp), Server (NodeJS App) and RaspberryPi (NodeJS App) are talking to each other via socket.io while the server stores the messages in a postgres database. The Raspberry passes the recieved messages into a p5js sketch enabling the power of processing! After generating a canvas the binary of the image gets send to the printer!
+Client (ReactApp), Server (NodeJS App) and RaspberryPi (NodeJS App) are talking to each other via socket.io while the server stores the messages in a postgres database. The Raspberry passes the recieved messages into a headless browser rendering the plain text into a appealing layout! After that, image gets send to the printer!
 
 ## Authors
 
