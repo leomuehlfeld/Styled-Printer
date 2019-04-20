@@ -2,10 +2,11 @@ import styled from "styled-components";
 
 const Modal = styled.div`
   width: 50%;
-  height: 500px;
   background-color: white;
-  padding: 20px;
+  padding: 30px;
   box-sizing: border-box;
+  boxshadow: 0px 14px 23px -21px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
 `;
 
 export default Modal;

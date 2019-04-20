@@ -9,9 +9,14 @@ import OutputSection from "./container/output-section.js";
 // Import Typo
 import Headline from "./components/typo/headline.js";
 
+// Import Layouts
+import ListElement from "./components/layouts/list-element.js";
+
 // Import Form
 import Modal from "./components/form/modal.js";
+import TextArea from "./components/form/textarea.js";
 import Input from "./components/form/input.js";
+import Button from "./components/form/button.js";
 
 // Globa Styled Literal
 const GlobalStyle = createGlobalStyle`
@@ -21,6 +26,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     font-family: neue-haas-grotesk-display;
+    letter-spacing: .5px;
   }
 `;
 
@@ -68,20 +74,32 @@ const App = () => {
       <Headline>Air Printer</Headline>
       <InputSection>
         <Modal>
-          <Input
-            placeholder="Message"
+          <TextArea
+            placeholder="Your Message"
             onChange={e => setValue(e.target.value)}
             value={value}
             type="text"
           />
           <Input
             maxLength="50"
-            placeholder="Username"
+            placeholder="Your name"
             onChange={e => setUser(e.target.value)}
             value={user}
             type="text"
           />
-          <button
+          <Button
+            warning
+            type="button"
+            onClick={e => {
+              e.preventDefault();
+              setValue("");
+              setUser("");
+            }}
+          >
+            Clear
+          </Button>
+          <Button
+            type="submit"
             onClick={e => {
               // Prevent form reload
               e.preventDefault();
@@ -104,17 +122,18 @@ const App = () => {
             }}
           >
             Print
-          </button>
+          </Button>
         </Modal>
       </InputSection>
 
       <OutputSection>
         <ul>
           {messages.map(m => (
-            <li>
-              {m.author || "Anonym"} wrote: {m.message}{" "}
-              {new Date(m.date).toLocaleDateString()}
-            </li>
+            <ListElement
+              msg={m.message}
+              author={m.author || "Anonym"}
+              date={new Date(m.date).toLocaleDateString()}
+            />
           ))}
         </ul>
       </OutputSection>
