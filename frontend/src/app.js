@@ -1,8 +1,28 @@
 import React, { useState, useEffect } from "react";
+import { createGlobalStyle } from "styled-components";
 import io from "socket.io-client";
 
+// Import Containers
+import InputSection from "./container/input-section.js";
+import OutputSection from "./container/output-section.js";
+
 // Import Typo
-import Headline from "./components/typo/headline";
+import Headline from "./components/typo/headline.js";
+
+// Import Form
+import Modal from "./components/form/modal.js";
+import Input from "./components/form/input.js";
+
+// Globa Styled Literal
+const GlobalStyle = createGlobalStyle`
+  @import url("https://use.typekit.net/xbh2tiu.css");
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: neue-haas-grotesk-display;
+  }
+`;
 
 const App = () => {
   const [value, setValue] = useState("");
@@ -44,54 +64,60 @@ const App = () => {
 
   return (
     <div className="App">
+      <GlobalStyle />
       <Headline>Air Printer</Headline>
-      <form>
-        <input
-          placeholder="Message"
-          onChange={e => setValue(e.target.value)}
-          value={value}
-          type="text"
-        />
-        <input
-          maxLength="50"
-          placeholder="Username"
-          onChange={e => setUser(e.target.value)}
-          value={user}
-          type="text"
-        />
-        <button
-          onClick={e => {
-            // Prevent form reload
-            e.preventDefault();
+      <InputSection>
+        <Modal>
+          <Input
+            placeholder="Message"
+            onChange={e => setValue(e.target.value)}
+            value={value}
+            type="text"
+          />
+          <Input
+            maxLength="50"
+            placeholder="Username"
+            onChange={e => setUser(e.target.value)}
+            value={user}
+            type="text"
+          />
+          <button
+            onClick={e => {
+              // Prevent form reload
+              e.preventDefault();
 
-            // Send Message
-            socket.emit("message", {
-              message: value,
-              author: user
-            });
+              // Send Message
+              socket.emit("message", {
+                message: value,
+                author: user
+              });
 
-            // Reset message input
-            // setValue("");
+              // Reset message input
+              // setValue("");
 
-            // Append message
-            addMessage({
-              message: value,
-              date: new Date(),
-              author: user
-            });
-          }}
-        >
-          Print
-        </button>
-      </form>
-      <ul>
-        {messages.map(m => (
-          <li>
-            {m.author || "Anonym"} wrote: {m.message}{" "}
-            {new Date(m.date).toLocaleDateString()}
-          </li>
-        ))}
-      </ul>
+              // Append message
+              addMessage({
+                message: value,
+                date: new Date(),
+                author: user
+              });
+            }}
+          >
+            Print
+          </button>
+        </Modal>
+      </InputSection>
+
+      <OutputSection>
+        <ul>
+          {messages.map(m => (
+            <li>
+              {m.author || "Anonym"} wrote: {m.message}{" "}
+              {new Date(m.date).toLocaleDateString()}
+            </li>
+          ))}
+        </ul>
+      </OutputSection>
     </div>
   );
 };
