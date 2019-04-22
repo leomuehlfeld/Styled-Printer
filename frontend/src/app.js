@@ -6,11 +6,9 @@ import io from "socket.io-client";
 import InputSection from "./container/input-section.js";
 import OutputSection from "./container/output-section.js";
 
-// Import Typo
-import Headline from "./components/typo/headline.js";
-
 // Import Layouts
 import ListElement from "./components/layouts/list-element.js";
+import Header from "./components/layouts/header.js";
 
 // Import Form
 import Modal from "./components/form/modal.js";
@@ -71,7 +69,7 @@ const App = () => {
   return (
     <div className="App">
       <GlobalStyle />
-      <Headline>Air Printer</Headline>
+      <Header />
       <InputSection>
         <Modal>
           <TextArea
