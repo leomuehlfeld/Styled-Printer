@@ -1,6 +1,6 @@
 # Air-Printer
 
-client-server-rpi interface for thermal printing generated content on a raspberrypi.
+Text gets send to a raspberrypi via a nodeJS server. The Raspberrypi renders the contents into an appealing layout that gets print on a thermal printer. The layout engine runs on headless chrome via puppeteer and is simply customizable with html, css and javascript.
 
 ## Motivation
 
