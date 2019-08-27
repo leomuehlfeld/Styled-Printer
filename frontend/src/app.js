@@ -39,7 +39,7 @@ const App = () => {
   };
 
   useEffect(() => {
-    const s = io("192.168.0.108:8080");
+    const s = io("192.168.0.38:8080");
     setSocket(s);
   }, []);
 
