@@ -12,11 +12,12 @@ Client (ReactApp), Server (NodeJS App) and RaspberryPi (NodeJS App) are talking 
 
 ## How to run
 This Repository is set up as a mono-repo containing the frontend, server and printer sources in three different folders.
-For each sub-repo run
+Follow these steps to get the sub-repos running. My version features a postgres integration which you'll have to get rid of if you dont want to save any messages for longer.
 
-### Set up the Frontend
+###Frontend
 ```
 $ npm install
+$ npm start
 ```
 
 ## Credits
