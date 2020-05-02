@@ -1,15 +1,23 @@
 # Air-Printer
 
-Text gets send to a raspberrypi via a nodeJS server. The Raspberrypi renders the contents into an appealing layout that gets print on a thermal printer. The layout engine runs on headless chrome via puppeteer and is simply customizable with html, css and javascript.
+Text gets send to a raspberrypi via a nodeJS server. The Raspberrypi renders the contents into an appealing layout that gets printed on a thermal printer. The layout engine runs on headless chrome via puppeteer and is simply customizable with html, css and javascript.
 
 ## Motivation
 
-The idea was simple: People should be able to send a message to a remote thermal printer hooked up to a raspberrypi. Since I intended to analyze and work with the collected messages, i wanted to store these message in a database. Every client should also be able to see a live-stream of current messages on their frontend.
+The idea was simple: People should be able to send a message to a remote thermal printer hooked up to a raspberrypi.Since the built in layout capabilities of the thermal printer and its library are really limited, I wanted to enable things like custom Fonts, proper linebrakes and more. The Input should be located on a webapp with a live chat of all messages beeing sent to the printer.
 
 ## How does it work?
+I achieved this by equipping the Pi with headless-chrome.The received data renders into an appealing, fully customizeable, layout which gets printed out.
+Client (ReactApp), Server (NodeJS App) and RaspberryPi (NodeJS App) are talking to each other over a websocket while the server receives, emmits and stores the messages in an optional postgres database.
 
-Client (ReactApp), Server (NodeJS App) and RaspberryPi (NodeJS App) are talking to each other via socket.io while the server stores the messages in a postgres database. The Raspberry passes the recieved messages into a headless browser rendering the plain text into a appealing layout! After that, image gets send to the printer!
+## How to run
+This Repository is set up as a mono-repo containing the frontend, server and printer sources in three different folders.
+For each sub-repo run
 
-## Authors
+# Set up the Frontend
+```
+$ npm install
+```
 
+## Credits
 This Project was wirtten by [Leo Mühlfeld](https://leomuehlfeld.at) but could not have been done without the amazing help from [Timo Lins](https://timo.sh)!
