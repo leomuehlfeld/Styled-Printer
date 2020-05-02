@@ -14,7 +14,7 @@ Client (ReactApp), Server (NodeJS App) and RaspberryPi (NodeJS App) are talking 
 This Repository is set up as a mono-repo containing the frontend, server and printer sources in three different folders.
 For each sub-repo run
 
-# Set up the Frontend
+### Set up the Frontend
 ```
 $ npm install
 ```
