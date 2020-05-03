@@ -12,17 +12,20 @@ Client (ReactApp), Server (NodeJS App) and RaspberryPi (NodeJS App) are talking 
 ## How to run
 This Repository is set up as a mono-repo containing the frontend, server and printer sources in three different folders.
 Follow these steps to get the sub-repos running. My version features a postgres integration which you'll have to get rid of if you dont want to save any messages for longer.
+### Server
+The Project is currently set to connect to a postgres database running locally on port 5432. You can change that in server/knexfile.js.
+```javascript
+connection: "postgres://postgres@localhost:5432/postgres"
+```
+```
+$ npm install
+$ nodemon
+```
 
 ### Frontend
 ```
 $ npm install
 $ npm start
-```
-
-### Server
-```
-$ npm install
-$ nodemon
 ```
 
 ### Printer
