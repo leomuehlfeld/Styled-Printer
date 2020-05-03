@@ -1,9 +1,8 @@
 # Air-Printer
 
-Text gets send to a raspberrypi via a nodeJS server. The Raspberrypi renders the contents into an appealing layout that gets printed on a thermal printer. The layout engine runs on headless chrome via puppeteer and is simply customizable with html, css and javascript.
+Simple NodeJS Scripts to print beautiful layouts from any client on your RaspberryPi Thermalprinter. Optional postgres integration to archive printed messages.
 
 ## Motivation
-
 The idea was simple: People should be able to send a message to a remote thermal printer hooked up to a raspberrypi.Since the built in layout capabilities of the thermal printer and its library are really limited, I wanted to enable things like custom Fonts, proper linebrakes and more. The Input should be located on a webapp with a live chat of all messages beeing sent to the printer.
 
 ## How does it work?
@@ -19,6 +18,25 @@ Follow these steps to get the sub-repos running. My version features a postgres 
 $ npm install
 $ npm start
 ```
+
+### Server
+```
+$ npm install
+$ nodemon
+```
+
+### Printer
+Copy the "printer" sub-repo to your RaspberryPi via SFTP. You can use clients like Transmit, Cyberduck, FileZilla, etc. to do so. Make sure to enable Serial-Connevtivity for your RaspberryPi. The easiest way is, to go to your raspi-config and enable "Serial" under the Networking Options.
+
+```
+$ sudo raspi-config
+```
+Reboot, install dependencies and run the print.js file via node.
+```
+$ npm install
+$ node print.js
+```
+If you want to edit the layout, edit the file index.html located in printer/gen/.
 
 ## Credits
 This Project was wirtten by [Leo Mühlfeld](https://leomuehlfeld.at) but could not have been done without the amazing help from [Timo Lins](https://timo.sh)!
