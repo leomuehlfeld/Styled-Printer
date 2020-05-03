@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const ListElement = styled.li`
-  width: 60%;
+  width: 70%;
   margin: 60px auto;
   padding: 17px 20px;
   box-sizing: border-box;
