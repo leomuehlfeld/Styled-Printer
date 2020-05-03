@@ -4,7 +4,7 @@ import Logo from "../icons/logo.js";
 
 const Wrapper = styled.div`
   position: fixed;
-  max-width: 250px;
+  max-width: 280px;
   margin: 20px;
 `;
 

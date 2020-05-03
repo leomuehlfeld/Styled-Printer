@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const InputSection = styled.div`
-  width: 38.2vw;
+  width: 50vw;
   height: 100vh;
   position: fixed;
   top: 0;

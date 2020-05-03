@@ -11,29 +11,18 @@ const ListElement = styled.li`
   border-radius: 4px;
 `;
 
-const Marginal = styled.span``;
-
-const Header = styled.div`
+const ListHeader = styled.div`
   display: flex;
   justify-content: space-between;
-`;
-
-const Paragraph = styled.span``;
-
-const Spacer = styled.div`
-  width: 100%;
-  height: 2px;
-  margin: 20px 0;
-  background-color: #f5f5f5;
+  color: grey;
 `;
 
 export default ({ msg, author, date }) => (
   <ListElement>
-    <Header>
-      <Marginal>{author}</Marginal>
-      <Marginal>{date}</Marginal>
-    </Header>
-    <Spacer />
-    <Paragraph>{msg}</Paragraph>
+    <ListHeader>
+      <span>{author}</span>
+      <span>{date}</span>
+    </ListHeader>
+    <p>{msg}</p>
   </ListElement>
 );

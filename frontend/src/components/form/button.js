@@ -16,10 +16,11 @@ const Button = styled.button`
   transition: all 100ms;
 
   &:hover {
-    transform: scale(1.05);
+    color: ${props => (props.warning ? "black" : "white")};
+    background-color: ${props => (props.warning ? "#ffcc32" : "black")};
   }
   &:active {
-    transform: scale(.95);
+    opacity: 0.4;
   }
 
   &:first-of-type {
