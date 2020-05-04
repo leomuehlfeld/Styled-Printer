@@ -1,4 +1,4 @@
-# Air-Printer
+# Styled Printer
 
 Simple NodeJS Scripts to print beautiful layouts from any client on your RaspberryPi Thermalprinter. Optional postgres integration to archive printed messages.
 
