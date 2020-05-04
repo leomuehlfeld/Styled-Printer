@@ -1,6 +1,6 @@
-# 🖨 Styled Printer
+# Styled Printer
 
-##Features
+## Features
 🎨 **Custom Layouts** – Bypass Layout Limits
 
 ⚡️ **React** – Frontend with Live-Chat  
