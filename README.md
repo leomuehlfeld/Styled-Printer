@@ -1,4 +1,11 @@
-# Styled Printer
+# 🖨 Styled Printer
+
+##Features
+🎨 **Custom Layouts** – Bypass Layout Limits
+
+⚡️ **React** – Frontend with Live-Chat  
+
+🐘 **Postgres** – Connect to Database
 
 Simple NodeJS Scripts to print beautiful layouts from any client on your RaspberryPi Thermalprinter. Optional postgres integration to archive printed messages.
 
@@ -17,13 +24,13 @@ The Project is currently set to connect to a postgres database running locally o
 ```javascript
 connection: "postgres://postgres@localhost:5432/postgres"
 ```
-```
+```bash
 $ npm install
 $ nodemon
 ```
 
 ### Frontend
-```
+```bash
 $ npm install
 $ npm start
 ```
@@ -31,11 +38,11 @@ $ npm start
 ### Printer
 Make sure to have node and npm installed. Copy the "printer" sub-repo to your RaspberryPi via SFTP. You can use clients like Transmit, Cyberduck, FileZilla, etc. to do so. Make sure to enable Serial-Connevtivity for your RaspberryPi. The easiest way is, to go to your raspi-config and enable "Serial" under the Networking Options.
 
-```
+```bash
 $ sudo raspi-config
 ```
 Reboot, install dependencies and run the print.js file via node.
-```
+```bash
 $ npm install
 $ node print.js
 ```
