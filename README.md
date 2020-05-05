@@ -1,24 +1,22 @@
 # Styled Printer
+Simple NodeJS Scripts to print beautiful layouts on your Adafruit/Sparkfun Thermalprinter.
 
 ![beautify-thermal](https://user-images.githubusercontent.com/22169889/81113336-5837d180-8f20-11ea-8d49-2959c4b36c8b.jpg)
 
-_Font on Left example: [Faune, Alice Savoie / Cnap](http://www.cnap.graphismeenfrance.fr/faune/en.html)!_
+_Font on right example: [Faune, Alice Savoie / Cnap](http://www.cnap.graphismeenfrance.fr/faune/en.html)_
 
-
-Simple NodeJS Scripts to print beautiful layouts from any client on your RaspberryPi Thermalprinter. Optional postgres integration to archive printed messages.
 ## Features
 🎨 **Custom Layouts** – Bypass Layout Limits
 
-⚡️ **React** – Frontend with Live-Chat  
+⚡️ **React** – Send from React-Frontend with Live-Chat  
 
-🐘 **Postgres** – Connect to Database
+🐘 **Postgres** – Connect to Database to Archive
 
 ## Motivation
-The idea was simple: People should be able to send a message to a remote thermal printer hooked up to a raspberrypi.Since the built in layout capabilities of the thermal printer and its library are really limited, I wanted to enable things like custom Fonts, proper linebrakes and more. The Input should be located on a webapp with a live chat of all messages beeing sent to the printer.
+The idea was simple: People should be able to send a message to a remote thermal printer hooked up to a raspberrypi.Since the built in layout capabilities of the thermal printer and its library are really limited, I wanted to enable things like custom Fonts, proper typography and more. The Input should be located on a react-webapp with a live chat displaying all sent messages.
 
 ## How does it work?
-I achieved this by equipping the Pi with headless-chrome.The received data renders into an appealing, fully customizeable, layout which gets printed out.
-Client (ReactApp), Server (NodeJS App) and RaspberryPi (NodeJS App) are talking to each other over a websocket while the server receives, emmits and stores the messages in an optional postgres database.
+I achieved this by equipping the Pi with headless-chrome. The received data renders into an appealing, fully customizeable, layout which gets printed out. Client (ReactApp), Server (NodeJS App) and RaspberryPi (NodeJS App) are talking to each other over a websocket while the server receives, emmits and stores the messages in an optional postgres database.
 
 ## How to run
 This Repository is set up as a mono-repo containing the frontend, server and printer sources in three different folders.
