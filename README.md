@@ -1,14 +1,12 @@
 # Styled Printer
 ![beautify-thermal](https://user-images.githubusercontent.com/22169889/81085498-940a7100-8ef7-11ea-9012-f0832fc541fb.jpg)
-
+Simple NodeJS Scripts to print beautiful layouts from any client on your RaspberryPi Thermalprinter. Optional postgres integration to archive printed messages.
 ## Features
 🎨 **Custom Layouts** – Bypass Layout Limits
 
 ⚡️ **React** – Frontend with Live-Chat  
 
 🐘 **Postgres** – Connect to Database
-
-Simple NodeJS Scripts to print beautiful layouts from any client on your RaspberryPi Thermalprinter. Optional postgres integration to archive printed messages.
 
 ## Motivation
 The idea was simple: People should be able to send a message to a remote thermal printer hooked up to a raspberrypi.Since the built in layout capabilities of the thermal printer and its library are really limited, I wanted to enable things like custom Fonts, proper linebrakes and more. The Input should be located on a webapp with a live chat of all messages beeing sent to the printer.
