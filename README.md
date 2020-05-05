@@ -1,5 +1,9 @@
 # Styled Printer
+
 ![beautify-thermal](https://user-images.githubusercontent.com/22169889/81113336-5837d180-8f20-11ea-8d49-2959c4b36c8b.jpg)
+
+_\* Font on Left example: [Faune, Alice Savoie / Cnap](http://www.cnap.graphismeenfrance.fr/faune/en.html)!
+
 
 Simple NodeJS Scripts to print beautiful layouts from any client on your RaspberryPi Thermalprinter. Optional postgres integration to archive printed messages.
 ## Features
