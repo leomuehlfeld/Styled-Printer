@@ -1,5 +1,5 @@
 # Styled Printer
-![beautify-thermal](https://user-images.githubusercontent.com/22169889/81113106-f70ffe00-8f1f-11ea-9bd8-77d77df9fa34.jpg)
+![beautify-thermal](https://user-images.githubusercontent.com/22169889/81113336-5837d180-8f20-11ea-8d49-2959c4b36c8b.jpg)
 
 Simple NodeJS Scripts to print beautiful layouts from any client on your RaspberryPi Thermalprinter. Optional postgres integration to archive printed messages.
 ## Features
