@@ -27,14 +27,14 @@ The Project is currently set to connect to a postgres database running locally o
 connection: "postgres://postgres@localhost:5432/postgres"
 ```
 ```bash
-$ npm install
-$ nodemon
+$ yarn install
+$ yarn start
 ```
 
 ### Frontend
 ```bash
-$ npm install
-$ npm start
+$ yarn install
+$ yarn start
 ```
 
 ### Printer
