@@ -16,13 +16,13 @@ import TextArea from "./components/form/textarea.js";
 import Input from "./components/form/input.js";
 import Button from "./components/form/button.js";
 
-// Globa Styled Literal
+// Global Styled Literal
 const GlobalStyle = createGlobalStyle`
-  @import url("https://use.typekit.net/xbh2tiu.css");
-
-  body {
+  * {
     margin: 0;
     padding: 0;
+  }
+  body{
     font-family: neue-haas-grotesk-display;
     letter-spacing: .5px;
   }
@@ -125,15 +125,13 @@ const App = () => {
       </InputSection>
 
       <OutputSection>
-        <ul>
-          {messages.map(m => (
+        {messages.map(m => (
             <ListElement
               msg={m.message}
               author={m.author || "Anonym"}
               date={new Date(m.date).toLocaleDateString()}
             />
           ))}
-        </ul>
       </OutputSection>
     </div>
   );
