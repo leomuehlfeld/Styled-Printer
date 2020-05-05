@@ -1,4 +1,5 @@
 # Styled Printer
+![beautify-thermal](https://user-images.githubusercontent.com/22169889/81085498-940a7100-8ef7-11ea-9012-f0832fc541fb.jpg)
 
 ## Features
 🎨 **Custom Layouts** – Bypass Layout Limits
