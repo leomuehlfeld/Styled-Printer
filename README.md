@@ -1,7 +1,8 @@
 # Styled Printer
-Simple NodeJS Scripts to print beautiful layouts on your Adafruit/Sparkfun Thermalprinter.
 
 ![beautify-thermal](https://user-images.githubusercontent.com/22169889/81113336-5837d180-8f20-11ea-8d49-2959c4b36c8b.jpg)
+
+Simple NodeJS Scripts to print beautiful layouts on your Adafruit/Sparkfun Thermalprinter.
 
 _Font on right example: [Faune, Alice Savoie / Cnap](http://www.cnap.graphismeenfrance.fr/faune/en.html)_
 
@@ -18,14 +19,12 @@ The idea was simple: People should be able to send a message to a remote thermal
 ## How does it work?
 I achieved this by equipping the Pi with headless-chrome. The received data renders into an appealing, fully customizeable, layout which gets printed out. Client (ReactApp), Server (NodeJS App) and RaspberryPi (NodeJS App) are talking to each other over a websocket while the server receives, emmits and stores the messages in an optional postgres database.
 
-## How to run
-This Repository is set up as a mono-repo containing the frontend, server and printer sources in three different folders.
-Follow these steps to get the sub-repos running. My version features a postgres integration which you'll have to get rid of if you dont want to save any messages for longer.
-### Server
-The Project is currently set to connect to a postgres database running locally on port 5432. You can change that in server/knexfile.js.
+## How to run!
+This Repository is set up as a mono-repo containing the frontend, server and printer sources in three different folders. The Project is currently set to connect to a postgres database running locally on port 5432. You can change that in server/knexfile.js.
 ```javascript
 connection: "postgres://postgres@localhost:5432/postgres"
 ```
+### Server
 ```bash
 $ yarn install
 $ yarn start
@@ -38,12 +37,11 @@ $ yarn start
 ```
 
 ### Printer
-Make sure to have node and npm installed. Copy the "printer" sub-repo to your RaspberryPi via SFTP. You can use clients like Transmit, Cyberduck, FileZilla, etc. to do so. Make sure to enable Serial-Connevtivity for your RaspberryPi. The easiest way is, to go to your raspi-config and enable "Serial" under the Networking Options.
-
+Install node and npm on your RaspberryPi. Go to your raspi-config and enable "Serial" under the Networking Options.
 ```bash
 $ sudo raspi-config
 ```
-Reboot, install dependencies and run the print.js file via node.
+Copy the "printer" folder to your RaspberryPi.
 ```bash
 $ cd printer
 $ npm install
