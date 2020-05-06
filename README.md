@@ -45,6 +45,7 @@ $ sudo raspi-config
 ```
 Reboot, install dependencies and run the print.js file via node.
 ```bash
+$ cd printer
 $ npm install
 $ node print.js
 ```
