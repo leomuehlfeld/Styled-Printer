@@ -51,4 +51,4 @@ $ node print.js
 If you want to edit the layout, edit the file index.html located in printer/gen/.
 
 ## Credits
-Code and Graphics by [Leo Mühlfeld.](https://leomuehlfeld.at) This Project had is origins in the development of [owe.zone](https://timo.sh/owezone/). Original Idea & huge amount of help by [Timo Lins](https://timo.sh)! Demo Pictures use amazing [Faune Typeface by Alice Savoie / Cnap.](http://www.cnap.graphismeenfrance.fr/faune/en.html)
+Code and Graphics by [Leo Mühlfeld.](https://leomuehlfeld.at) This Project had is origins in the development of [owe.zone](https://timo.sh/owezone/). Original Idea & huge amount of help by [Timo Lins!](https://timo.sh) Demo Picture features [Faune Typeface by Alice Savoie / Cnap.](http://www.cnap.graphismeenfrance.fr/faune/en.html)
