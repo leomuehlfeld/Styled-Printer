@@ -90,13 +90,14 @@ const App = () => {
       <InputSection>
         <Modal>
           <TextArea
+            maxLength="100"
             placeholder="Your Message"
             onChange={e => setValue(e.target.value)}
             value={value}
             type="text"
           />
           <Input
-            maxLength="50"
+            maxLength="20"
             placeholder="Your name"
             onChange={e => setUser(e.target.value)}
             value={user}
