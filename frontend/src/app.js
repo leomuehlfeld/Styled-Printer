@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
 import { createGlobalStyle } from "styled-components";
 import io from "socket.io-client";
 
@@ -28,25 +28,40 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
+
+const useSocket = () => {
+  const socketRef = useRef(null)
+
+  useEffect(() => {
+    const s = io("192.168.0.38:8080");
+    socketRef.current = s;
+  }, [socketRef]);
+
+  return socketRef
+
+}
+
+
 const App = () => {
   const [value, setValue] = useState("");
   const [user, setUser] = useState("");
   const [messages, setMessages] = useState([]);
-  const [socket, setSocket] = useState(null);
+  const socketRef = useSocket()
 
-  const addMessage = message => {
+
+  const addMessage = useCallback(message => {
     setMessages([message, ...messages]);
-  };
+  }, [messages]);
 
-  useEffect(() => {
-    const s = io("192.168.0.38:8080");
-    setSocket(s);
-  }, []);
 
   useEffect(
     () => {
+      const socket = socketRef.current;
+
       // Is socket initialized yet?
       if (socket) {
+        console.log("Listening for messages")
+
         // Listen for new incoming message
         socket.on("message", message => {
           addMessage(message);
@@ -61,9 +76,11 @@ const App = () => {
             [...allMessages].sort((a, b) => new Date(b.date) - new Date(a.date))
           );
         });
+      } else {
+        console.log("Socket not found")
       }
     },
-    [messages, socket]
+    [messages, addMessage, socketRef]
   );
 
   return (
@@ -103,14 +120,12 @@ const App = () => {
               e.preventDefault();
 
               // Send Message
-              socket.emit("message", {
+              socketRef.current.emit("message", {
                 message: value,
                 author: user
               });
-
               // Reset message input
-              // setValue("");
-
+              setValue("");
               // Append message
               addMessage({
                 message: value,
