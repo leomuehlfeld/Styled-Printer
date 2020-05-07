@@ -1,7 +1,8 @@
 {
-  "name": "air-print",
-  "version": "0.1.0",
-  "private": true,
+  "name": "styled-printer-frontend",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": false,
   "dependencies": {
     "react": "^16.13.1",
     "react-dom": "^16.8.4",

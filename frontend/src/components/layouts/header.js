@@ -29,7 +29,7 @@ const Link = styled.a`
 export default () => (
   <Wrapper>
     <Logo />
-    <Headline>Air Printer</Headline>
+    <Headline>Styled Printer</Headline>
     <Link href="https://github.com/leomuehlfeld" target="blank">
       View on Github
     </Link>

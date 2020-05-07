@@ -1,10 +1,10 @@
 {
-  "name": "air-print-server",
+  "name": "styled-printer-server",
   "version": "1.0.0",
   "author": "Leo Muehlfeld",
   "main": "src/index.js",
   "license": "MIT",
-  "private": true,
+  "private": false,
   "scripts": {
     "start": "node src/index.js"
   },
