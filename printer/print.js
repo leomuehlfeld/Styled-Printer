@@ -5,8 +5,8 @@ const generateImage = require("./getimg");
 
 console.log("script now running");
 
-// Your IP goes here:
-const s = io("http://000.000.0.00:8080");
+// Your IP goes here
+const s = io("http://192.168.0.38:8080");
 
 const serialPort = new SerialPort("/dev/ttyS0", {
   baudRate: 19200
