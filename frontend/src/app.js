@@ -28,7 +28,8 @@ const useSocket = () => {
   const socketRef = useRef(null)
 
   useEffect(() => {
-    const s = io("192.168.0.38:8080");
+    //Your IP goes here:
+    const s = io("000.000.0.00:8080");
     socketRef.current = s;
   }, [socketRef]);
   return socketRef
