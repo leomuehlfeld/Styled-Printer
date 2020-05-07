@@ -31,6 +31,7 @@ In order to archive all printed messages, the project is currently set to connec
 knex migrate:latest
 ```
 _If you need to know how to get a local database up and running, visit [DockerHub–Postgres.](https://hub.docker.com/_/postgres)_
+
 Super! Everything is set, lets start the Server by running
 ```bash
 $ yarn start
