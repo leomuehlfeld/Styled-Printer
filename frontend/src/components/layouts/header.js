@@ -30,7 +30,7 @@ export default () => (
   <Wrapper>
     <Logo />
     <Headline>Styled Printer</Headline>
-    <Link href="https://github.com/leomuehlfeld" target="blank">
+    <Link href="https://github.com/leomuehlfeld/Styled-Printer" target="blank">
       View on Github
     </Link>
   </Wrapper>

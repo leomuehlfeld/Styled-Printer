@@ -4,15 +4,16 @@
     <title>Image Generator</title>
 
     <style>
+      /* Import Custom Font like so: */
       @font-face {
-        font-family: HaasGrotesk;
-        src: url("haas-md.otf") format("opentype");
+        font-family: YourFont;
+        src: url("yourfont.otf") format("opentype");
       }
       body,
       html {
         margin: 0;
         padding: 0;
-        font-family: HaasGrotesk, sans-serif;
+        font-family: Helvetica, Arial, sans-serif;
       }
       .background {
         position: fixed;
@@ -64,6 +65,7 @@
       }
     </style>
     <script>
+    // Load Params from url
       window.onload = function() {
         const params = new URLSearchParams(window.location.search);
         value = params.get("text");
@@ -115,7 +117,6 @@
 	c2-1.1,4-0.9,6.2,0.7C71.6,42.8,72,44.2,71.6,46.6z"
           />
         </svg>
-
         <span class="hr"></span> <span class="copy" id="output"></span>
         <span class="hr"></span> <span class="marginal" id="author"></span
         ><br />

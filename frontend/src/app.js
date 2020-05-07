@@ -19,7 +19,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
   }
   body{
-    font-family: neue-haas-grotesk-display;
+    font-family: Helvetica, Arial, sans-serif;
     letter-spacing: .5px;
   }
 `;

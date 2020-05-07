@@ -15,6 +15,7 @@ const ListHeader = styled.div`
   display: flex;
   justify-content: space-between;
   color: grey;
+  margin-bottom: 20px;
 `;
 
 export default ({ msg, author, date }) => (
