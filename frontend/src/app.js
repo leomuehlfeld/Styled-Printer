@@ -1,21 +1,17 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import { createGlobalStyle } from "styled-components";
 import io from "socket.io-client";
-
 // Import Containers
 import InputSection from "./container/input-section.js";
 import OutputSection from "./container/output-section.js";
-
 // Import Layouts
 import ListElement from "./components/layouts/list-element.js";
 import Header from "./components/layouts/header.js";
-
 // Import Form
 import Modal from "./components/form/modal.js";
 import TextArea from "./components/form/textarea.js";
 import Input from "./components/form/input.js";
 import Button from "./components/form/button.js";
-
 // Global Styled Literal
 const GlobalStyle = createGlobalStyle`
   * {
@@ -28,7 +24,6 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-
 const useSocket = () => {
   const socketRef = useRef(null)
 
@@ -36,11 +31,8 @@ const useSocket = () => {
     const s = io("192.168.0.38:8080");
     socketRef.current = s;
   }, [socketRef]);
-
   return socketRef
-
 }
-
 
 const App = () => {
   const [value, setValue] = useState("");
@@ -48,30 +40,24 @@ const App = () => {
   const [messages, setMessages] = useState([]);
   const socketRef = useSocket()
 
-
   const addMessage = useCallback(message => {
     setMessages([message, ...messages]);
   }, [messages]);
 
-
   useEffect(
     () => {
       const socket = socketRef.current;
-
       // Is socket initialized yet?
       if (socket) {
         console.log("Listening for messages")
-
         // Listen for new incoming message
         socket.on("message", message => {
           addMessage(message);
         });
-
         // Listen for all previous messages
         socket.on("all messages", allMessages => {
           // Update state to new messages
           console.log("All", allMessages);
-
           setMessages(
             [...allMessages].sort((a, b) => new Date(b.date) - new Date(a.date))
           );
