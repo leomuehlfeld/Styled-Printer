@@ -2,6 +2,8 @@
 
 ![beautify-thermal](https://user-images.githubusercontent.com/22169889/81113336-5837d180-8f20-11ea-8d49-2959c4b36c8b.jpg)
 
+![npm version](https://badgen.net/npm/v/styled-printer) ![npm version](https://badgen.net/david/dep/leomuehlfeld/styled-printer)
+
 Simple NodeJS Scripts to print beautiful layouts on your Adafruit/Sparkfun Thermalprinter.
 
 ## Features
