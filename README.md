@@ -4,8 +4,6 @@
 
 Simple NodeJS Scripts to print beautiful layouts on your Adafruit/Sparkfun Thermalprinter.
 
-_Font on right example: [Faune, Alice Savoie / Cnap](http://www.cnap.graphismeenfrance.fr/faune/en.html)_
-
 ## Features
 🎨 **Custom Layouts** – Bypass Layout Limits
 
