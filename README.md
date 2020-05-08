@@ -2,7 +2,7 @@
 
 ![beautify-thermal](https://user-images.githubusercontent.com/22169889/81113336-5837d180-8f20-11ea-8d49-2959c4b36c8b.jpg)
 
-![frontend](https://badgen.net/david/dep/leomuehlfeld/styled-printer/frontend?label="frontend dependencies")
+![frontend](https://badgen.net/david/dep/leomuehlfeld/styled-printer/frontend?label=frontend)
 ![server](https://badgen.net/david/dep/leomuehlfeld/styled-printer/server)
 ![printer](https://badgen.net/david/dep/leomuehlfeld/styled-printer/printer)
 ![printer](https://badgen.net/badge/license/MIT/blue)
