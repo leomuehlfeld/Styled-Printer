@@ -5,7 +5,7 @@
 ![frontend](https://badgen.net/david/dep/leomuehlfeld/styled-printer/frontend?label=frontend%20dependencies)
 ![server](https://badgen.net/david/dep/leomuehlfeld/styled-printer/server?label=server%20dependencies)
 ![printer](https://badgen.net/david/dep/leomuehlfeld/styled-printer/printer?label=printer%20dependencies)
-![printer](https://badgen.net/badge/license/MIT/blue)
+![license](https://badgen.net/badge/license/MIT/blue)
 
 Simple NodeJS Scripts to print beautiful layouts on your Adafruit/Sparkfun Thermalprinter.
 
