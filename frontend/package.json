@@ -1,8 +1,14 @@
 {
   "name": "styled-printer-frontend",
   "version": "1.0.0",
+  "author": "Leo Muehlfeld",
+  "description": "styled-printer-frontend",
   "license": "MIT",
   "private": false,
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/leomuehlfeld/styled-printer"
+  },
   "dependencies": {
     "react": "^16.13.1",
     "react-dom": "^16.8.4",

@@ -3,11 +3,16 @@
   "version": "1.0.0",
   "author": "Leo Muehlfeld",
   "license": "MIT",
-  "description": "nodejs-printer-client ",
+  "description": "styled-printer-client",
   "main": "print.js",
+  "private": false,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node print.js"
+  },
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/leomuehlfeld/styled-printer"
   },
   "dependencies": {
     "moment": "^2.25.3",
