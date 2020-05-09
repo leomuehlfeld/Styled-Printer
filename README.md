@@ -10,11 +10,11 @@
 Simple NodeJS Scripts to print beautiful layouts on your Adafruit/Sparkfun Thermalprinter.
 
 ## Features
-🎨 **Custom Layouts** – Bypass Layout Limits
+🎨 **Custom Layouts** – Bypass layout limits
 
-⚡️ **React** – Send from react-app with Live-Chat  
+⚡️ **React** – Send from react-app with live-chat  
 
-🐘 **Postgres** – Connect to Database to Archive
+🐘 **Postgres** – Connect to database and archive
 
 ## Motivation
 The idea was simple: People should be able to send a message to a remote thermal printer hooked up to a raspberrypi. Since the built in layout capabilities of the thermal printer and its library are really limited, I wanted to enable things like custom Fonts, proper typography, svgs and more. The Input should be located on a react-app with a live chat displaying all sent messages, while the server should archive sent messages in a database.
@@ -27,7 +27,7 @@ This Repository is set up as a mono-repo containing the frontend, server and pri
 $ cd server
 $ yarn install
 ```
-In order to archive all printed messages, the project is currently set to connect to a postgres database. I reccomend doing it locally for devleopment and playarround but you can also connect to a production database. You can change the settings for your development and production database in server/knexfile.js. Edit your schema in server/migrations/schmema. For detailed documentation visit [Knex.](http://knexjs.org) Spin up a Database and run
+In order to archive all printed messages, the project is currently set to connect to a postgres database. I reccomend doing it locally for devleopment and playarround but you can also connect to a production database. You can change the settings for your development and production database in server/knexfile.js. Edit your schema in server/migrations/schema. For detailed documentation visit [Knex.](http://knexjs.org) Spin up a Database and run
 ```bash
 $ knex migrate:latest
 ```
