@@ -1,8 +1,6 @@
 {
   "name": "styled-printer-client",
   "version": "1.0.0",
-  "author": "Leo Muehlfeld",
-  "license": "MIT",
   "description": "styled-printer-client",
   "main": "print.js",
   "private": false,
@@ -10,14 +8,12 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node print.js"
   },
-  "repository": {
-      "type": "git",
-      "url": "https://github.com/leomuehlfeld/styled-printer"
-  },
+  "author": "Leo Muehlfeld",
+  "license": "MIT",
   "dependencies": {
     "moment": "^2.25.3",
-    "puppeteer-core": "^3.0.2",
-    "serialport": "^8.0.7",
+    "puppeteer-core": "^3.0.4",
+    "serialport": "^9.0.0",
     "socket.io-client": "^2.3.0",
     "thermalprinter": "^0.3.8"
   }
