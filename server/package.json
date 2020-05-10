@@ -10,8 +10,8 @@
     "start": "node src/index.js"
   },
   "repository": {
-      "type": "git",
-      "url": "https://github.com/leomuehlfeld/styled-printer"
+    "type": "git",
+    "url": "https://github.com/leomuehlfeld/styled-printer"
   },
   "dependencies": {
     "knex": "^0.21.1",
