@@ -29,7 +29,7 @@ const useSocket = () => {
 
   useEffect(() => {
     //Your IP goes here:
-    const s = io("https://air-printer.herokuapp.com/");
+    const s = io("000.000.00.0:8080");
     socketRef.current = s;
   }, [socketRef]);
   return socketRef
