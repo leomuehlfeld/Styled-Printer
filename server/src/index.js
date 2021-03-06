@@ -2,10 +2,10 @@ const environment = process.env.NODE_ENV || "development";
 const configuration = require("../knexfile")[environment];
 const db = require("knex")(configuration);
 const io = require("socket.io")(process.env.PORT || 8080, {
-  // cors: {
-  //   origin: "https://airprinter.leomuehlfeld.at",
-  //   methods: ["GET", "POST"]
-  // }
+  cors: {
+    origin: "*",
+    methods: ["GET", "POST"]
+  }
 });
 
 // Save Message to DB
