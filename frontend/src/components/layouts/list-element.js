@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const ListElement = styled.li`
+const Element = styled.li`
   width: 70%;
   margin: 60px auto;
   padding: 17px 20px;
@@ -11,19 +11,21 @@ const ListElement = styled.li`
   border-radius: 4px;
 `;
 
-const ListHeader = styled.div`
+const Header = styled.div`
   display: flex;
   justify-content: space-between;
   color: grey;
   margin-bottom: 20px;
 `;
 
-export default ({ msg, author, date }) => (
-  <ListElement>
-    <ListHeader>
+const ListElement = ({ msg, author, date }) => (
+  <Element>
+    <Header>
       <span>{author}</span>
       <span>{date}</span>
-    </ListHeader>
+    </Header>
     <p>{msg}</p>
-  </ListElement>
+  </Element>
 );
+
+export default ListElement;

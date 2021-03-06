@@ -9,7 +9,7 @@ const LogoContainer = styled.svg`
   float: left;
 `;
 
-export default () => (
+const Logo = () => (
   <LogoContainer viewBox="0 0 100 100">
     <g>
       <path
@@ -71,3 +71,5 @@ export default () => (
     </g>
   </LogoContainer>
 );
+
+export default Logo; 

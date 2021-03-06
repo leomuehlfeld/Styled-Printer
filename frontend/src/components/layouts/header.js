@@ -26,7 +26,7 @@ const Link = styled.a`
   }
 `;
 
-export default () => (
+const Header = () => (
   <Wrapper>
     <Logo />
     <Headline>Styled Printer</Headline>
@@ -35,3 +35,5 @@ export default () => (
     </Link>
   </Wrapper>
 );
+
+export default Header; 
