@@ -30,7 +30,7 @@ const useSocket = () => {
 
   useEffect(() => {
     //Your IP goes here:
-    const s = io(process.env.$HEROKU_KEY);
+    const s = io(REACT_APP_HEROKU);
     socketRef.current = s;
   }, [socketRef]);
   return socketRef
