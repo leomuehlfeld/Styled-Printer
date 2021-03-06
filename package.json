@@ -1,6 +1,8 @@
 {
   "scripts": {
     "heroku-prebuild": "cd server && npm install",
-    "start": "cd server && npm start"
+    "start": "cd server && npm start",
+    "migrate": "cd server && knex migrate:latest",
+    "test": "echo \"testing CLI\""
   }
 }
