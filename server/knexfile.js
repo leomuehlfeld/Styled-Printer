@@ -7,7 +7,7 @@ module.exports = {
   production: {
     timezone: "CET",
     client: "postgresql",
-    connection: process.env.DATABASE_URL + `?ssl=true`,
+    connection: process.env.DATABASE_URL,
     migrations: {
       directory: './migrations'
     }
