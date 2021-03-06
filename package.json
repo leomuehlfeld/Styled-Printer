@@ -2,7 +2,7 @@
   "scripts": {
     "heroku-prebuild": "cd server && npm install",
     "start": "cd server && npm start",
-    "migrate": "cd server && npx knex --version",
+    "migrate": "cd server && knex --version",
     "test": "echo \"testing CLI\""
   }
 }
