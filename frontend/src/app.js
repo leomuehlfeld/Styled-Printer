@@ -12,6 +12,9 @@ import Modal from "./components/form/modal.js";
 import TextArea from "./components/form/textarea.js";
 import Input from "./components/form/input.js";
 import Button from "./components/form/button.js";
+
+console.log(process.env.HEROKU_KEY);
+
 // Global Styled Literal
 const GlobalStyle = createGlobalStyle`
   * {
