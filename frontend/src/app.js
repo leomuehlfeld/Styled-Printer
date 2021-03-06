@@ -29,7 +29,7 @@ const useSocket = () => {
 
   useEffect(() => {
     //Your IP goes here:
-    const s = io(process.env.SERVER);
+    const s = io(process.env.PRINTSERVER);
     socketRef.current = s;
   }, [socketRef]);
   return socketRef
