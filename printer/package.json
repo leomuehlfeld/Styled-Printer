@@ -11,10 +11,11 @@
   "author": "Leo Muehlfeld",
   "license": "MIT",
   "dependencies": {
-    "moment": "^2.27.0",
-    "puppeteer-core": "^5.2.1",
-    "serialport": "^9.0.1",
-    "socket.io-client": "^2.3.0",
+    "dotenv": "^8.2.0",
+    "moment": "^2.29.1",
+    "puppeteer-core": "^5.5.0",
+    "serialport": "^9.0.7",
+    "socket.io-client": "^3.1.2",
     "thermalprinter": "^0.3.8"
   }
 }
