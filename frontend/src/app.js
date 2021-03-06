@@ -13,8 +13,6 @@ import TextArea from "./components/form/textarea.js";
 import Input from "./components/form/input.js";
 import Button from "./components/form/button.js";
 
-console.log(process.env.HEROKU_KEY);
-
 // Global Styled Literal
 const GlobalStyle = createGlobalStyle`
   * {
@@ -32,7 +30,7 @@ const useSocket = () => {
 
   useEffect(() => {
     //Your IP goes here:
-    const s = io("https://air-printer.herokuapp.com");
+    const s = io(process.env.HEROKU_KEY);
     socketRef.current = s;
   }, [socketRef]);
   return socketRef
