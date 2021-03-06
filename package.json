@@ -1,7 +1,6 @@
 {
   "scripts": {
     "heroku-prebuild": "cd server && npm install",
-    "heroku-postbuild": "cd server && knex migrate:latest",
     "start": "cd server && npm start"
   }
 }
