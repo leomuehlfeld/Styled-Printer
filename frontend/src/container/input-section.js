@@ -11,6 +11,15 @@ const InputSection = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 1024px) {
+    width: 65vw;
+  }
+
+  @media (max-width: 900px) {
+    width: 100%;
+    position: relative; 
+  }
 `;
 
 export default InputSection;

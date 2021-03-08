@@ -3,12 +3,12 @@ import styled from "styled-components";
 
 const Element = styled.li`
   width: 70%;
-  margin: 60px auto;
+  margin: 2em auto;
   padding: 17px 20px;
   box-sizing: border-box;
   background-color: white;
   min-height: 100px;
-  border-radius: 4px;
+  border-radius: 3px;
 `;
 
 const Header = styled.div`
