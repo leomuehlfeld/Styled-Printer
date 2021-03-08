@@ -6,6 +6,7 @@ const Wrapper = styled.div`
   position: absolute;
   max-width: 280px;
   margin: 20px;
+  z-index: 1;
 `;
 
 const Headline = styled.span`

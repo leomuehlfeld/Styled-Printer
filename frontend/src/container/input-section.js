@@ -7,7 +7,6 @@ const InputSection = styled.div`
   top: 0;
   left: 0;
   background-color: #f5f5f5;
-  z-index: -1;
   display: flex;
   align-items: center;
   justify-content: center;
