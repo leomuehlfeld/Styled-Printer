@@ -3,7 +3,7 @@ const configuration = require("../knexfile")[environment];
 const db = require("knex")(configuration);
 const io = require("socket.io")(process.env.PORT || 8080, {
   cors: {
-    origin: "*",
+    origin: "https://airpinter.leomuehlfeld.at",
     methods: ["GET", "POST"]
   }
 });
